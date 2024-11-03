@@ -50,5 +50,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Volley
-    implementation("com.android.volley:volley:1.2.1")
+    implementation(libs.volley)
+    implementation(libs.picasso)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.play.services.location)
 }
