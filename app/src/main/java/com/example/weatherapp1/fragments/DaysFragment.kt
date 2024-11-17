@@ -11,8 +11,9 @@ import com.example.weatherapp1.MainViewModel
 import com.example.weatherapp1.R
 import com.example.weatherapp1.adapters.WeatherAdapter
 import com.example.weatherapp1.databinding.FragmentDaysBinding
+import com.example.weatherapp1.models.WeatherModel
 
-class DaysFragment : Fragment() {
+class DaysFragment : Fragment(), WeatherAdapter.Listener{
 
     private lateinit var binding : FragmentDaysBinding
     private lateinit var adapter : WeatherAdapter
@@ -35,9 +36,13 @@ class DaysFragment : Fragment() {
     }
 
     private fun init() = with(binding){
-        adapter = WeatherAdapter()
+        adapter = WeatherAdapter(this@DaysFragment)
         rcView.layoutManager = LinearLayoutManager(activity)
         rcView.adapter = adapter
+    }
+
+    override fun onClick(item: WeatherModel) {
+        model.liveDataCurrent.value = item
     }
 
     companion object {
