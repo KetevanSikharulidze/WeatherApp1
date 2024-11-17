@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/imWeather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.MainFragment">
@@ -50,7 +49,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imWeather"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_launcher_foreground"
@@ -94,7 +93,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvCurrentTemp" />
 
             <TextView
-                android:id="@+id/tvMinMax"
+                android:id="@+id/tvMaxMin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/allerta_stencil"
@@ -114,7 +113,7 @@
                 android:src="@drawable/ic_cloud_sync"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMinMax" />
+                app:layout_constraintTop_toBottomOf="@id/tvMaxMin" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

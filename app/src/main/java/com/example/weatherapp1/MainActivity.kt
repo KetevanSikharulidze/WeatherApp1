@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.weatherapp1.fragments.MainFragment
 
-const val API_KEY = "30526069901d408fa5a182653240311"
 
 class MainActivity : AppCompatActivity() {
 

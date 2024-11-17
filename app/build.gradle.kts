@@ -49,7 +49,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //Volley
     implementation(libs.volley)
     implementation(libs.picasso)
     implementation(libs.androidx.fragment.ktx)
