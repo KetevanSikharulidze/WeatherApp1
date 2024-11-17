@@ -1,5 +1,6 @@
 package com.example.weatherapp1.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,9 @@ class WeatherAdapter : ListAdapter<WeatherModel, WeatherAdapter.Holder>(Comparat
         fun bind(item: WeatherModel) = with(binding){
             tvDate.text = item.time
             tvCondition.text = item.condition
-            tvTemp.text = item.currentTemp
+            tvTemp.text = item.currentTemp.ifEmpty {
+                "${item.maxTemp}°C / ${item.minTemp}°C"
+            }
             Picasso.get().load("https:" + item.imageUrl).into(im)
         } //როგორ ვავსებთ
     }

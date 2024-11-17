@@ -22,6 +22,7 @@ import com.example.weatherapp1.models.WeatherModel
 import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
+import kotlin.math.log
 import kotlin.math.min
 
 const val API_KEY = "30526069901d408fa5a182653240311"
@@ -80,7 +81,7 @@ class MainFragment : Fragment() {
 
     private fun updateCurrentCard() = with(binding){
         model.liveDataCurrent.observe(viewLifecycleOwner){
-            val maxMinTemp = "${it.maxTemp}°C/${it.minTemp}°C"
+            val maxMinTemp = "${it.maxTemp}°C / ${it.minTemp}°C"
             tvData.text = it.time
             tvCity.text = it.city
             tvCurrentTemp.text = it.currentTemp
@@ -161,6 +162,8 @@ class MainFragment : Fragment() {
             )
             list.add(item)
         }
+        model.liveDataList.value = list
+        Log.d("MyLog",model.liveDataCurrent.value.toString())
         return list
     }
 
